@@ -22,8 +22,19 @@
             })
             fetch(url)
                 .then(res => res.json())
-                .then(data => console.log(data))
+                .then(data => renderReceta(data));
         })
+
+        const renderReceta = (objetoRecetas) => {
+            console.log(objetoRecetas)
+            for (let receta of objetoRecetas){
+                console.log(receta)
+                receta.ingredientes.forEach(ingr => {
+                    document.body.innerHTML += ingr;
+                })
+            }
+        }
+
     </script>
 
 

@@ -1,6 +1,7 @@
 const cheerio = require("cheerio");
 const request = require("request-promise");
 const express = require("express");
+const utf8 = require("utf8");
 const app = express();
 const port = 3000;
 
@@ -17,8 +18,44 @@ async function scalpURLS(ingredientesInputs) {
   return recetas;
 }
 
+async function scalpReceta(receta) {
+  const $ = await request({
+    uri: receta,
+    transform: (body) => cheerio.load(body),
+  });
+
+  let recetaObjeto = {
+    imagen: "",
+    ingredientes: [],
+    link: "",
+  };
+  //EL SIGUIEN PEDAZO DE CÓDIGO BUSCA LOS "LI" DENTRO DE LA
+  //DESCRIPCION DE LA RECETA PARA DEVOLVER LOS INGREDIENTES
+  $(".short-description")
+    .find("li")
+    .each(function (i, elem) {
+      recetaObjeto.ingredientes[i] = utf8.decode($(this).html().trim());
+    });
+  console.log(recetaObjeto.ingredientes);
+
+  return recetaObjeto;
+}
+
 app.get("/:query", async function (req, res) {
-  res.send(await scalpURLS(req.params.query));
+  let arrayDeRecetas = await scalpURLS(req.params.query);
+
+  console.log(arrayDeRecetas);
+
+  let resultadoTotal = [];
+
+  for (let receta of arrayDeRecetas) {
+    let imagen = await scalpReceta(receta);
+    resultadoTotal.push(imagen);
+  }
+
+  console.log(resultadoTotal);
+
+  res.send(resultadoTotal);
 });
 
 app.get("/", (req, res) => {
