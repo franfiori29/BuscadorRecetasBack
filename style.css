@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+}
+button {
+  margin: 0 0 20px 0;
+}
+.tarjeta {
+  border: 5px solid red;
+  width: 60%;
+  margin: auto;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.tarjeta p:first-child {
+  font-size: 3vh;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.tarjeta p {
+  margin: 20px 20px;
+}
+.extra {
+  margin: 3px;
+}
