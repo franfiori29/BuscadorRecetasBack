@@ -2,7 +2,7 @@ const cheerio = require("cheerio");
 const request = require("request-promise");
 const express = require("express");
 const app = express();
-const port = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 
 async function scalpURLS(ingredientesInputs) {
   const $ = await request({
@@ -56,6 +56,6 @@ app.get("/", (req, res) => {
   res.send("hi");
 });
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Buscador de recetas escuchando en http://localhost:${port}`);
 });
