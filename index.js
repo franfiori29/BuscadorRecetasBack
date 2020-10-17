@@ -57,5 +57,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Buscador de recetas escuchando en http://localhost:${port}`);
+  console.log(`Buscador de recetas escuchando en ${PORT}`);
 });
