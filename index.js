@@ -39,6 +39,8 @@ async function scalpReceta(receta) {
   return recetaObjeto;
 }
 
+app.use("/", express.static(__dirname + "/public"));
+
 app.get("/:query", async function (req, res) {
   let total = req.params.query[req.params.query.length - 1];
   let parametros = req.params.query.slice(0, -1);
@@ -51,7 +53,7 @@ app.get("/:query", async function (req, res) {
 });
 
 app.get("/", (req, res) => {
-  res.json({ 1: "hola" });
+  res.send("hi");
 });
 
 app.listen(port, () => {
