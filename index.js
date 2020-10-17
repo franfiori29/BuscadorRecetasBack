@@ -2,7 +2,7 @@ const cheerio = require("cheerio");
 const request = require("request-promise");
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.port || 3000;
 
 async function scalpURLS(ingredientesInputs) {
   const $ = await request({
