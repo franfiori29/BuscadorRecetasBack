@@ -24,9 +24,10 @@ async function scalpReceta(receta) {
   });
 
   let recetaObjeto = {
+    titulo: "",
     imagen: "",
     ingredientes: [],
-    link: "",
+    link: receta,
   };
   //EL SIGUIEN PEDAZO DE CÓDIGO BUSCA LOS "LI" DENTRO DE LA
   //DESCRIPCION DE LA RECETA PARA DEVOLVER LOS INGREDIENTES
@@ -35,6 +36,9 @@ async function scalpReceta(receta) {
     .each(function (i, elem) {
       recetaObjeto.ingredientes[i] = $(this).html().trim();
     });
+  recetaObjeto.titulo = $("h2").html();
+
+  recetaObjeto.imagen = `https://cocinerosargentinos.com${$(".recipe-frame").find("img").attr("src")}`
 
   return recetaObjeto;
 }

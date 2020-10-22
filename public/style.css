@@ -1,27 +1,29 @@
 body {
   text-align: center;
 }
-button {
-  margin: 0 0 20px 0;
-}
-.tarjeta {
-  border: 5px solid red;
-  width: 60%;
-  margin: auto;
-  border-radius: 30px;
-  margin-bottom: 10px;
+
+input {
   text-align: center;
 }
 
-.tarjeta p:first-child {
-  font-size: 3vh;
-  font-weight: bold;
-  text-decoration: underline;
+button {
+  margin: 0 0 20px 0;
 }
 
-.tarjeta p {
-  margin: 20px 20px;
+#divInputs {
+  width: 50%;
+  margin: auto;
 }
-.extra {
-  margin: 3px;
+
+.card {
+  width: 50%;
+  margin: auto;
+}
+
+.divInputIngrediente, .ingrediente {
+  font-size: 1.5rem;
+}
+
+#container > * {
+  margin-top: 10px;
 }

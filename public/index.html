@@ -5,34 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscador de recetas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body>
     <h1>Buscador de recetas:</h1>
     <div id="divInputs">
-        <div>
+        <div class="divInputIngrediente">
             Ingrediente principal:
             <input type="text" class="ingrediente" /><br />
         </div>
-        <div>
-            Ingrediente extra:
-            <input type="text" class="ingrediente" /><br />
-        </div>
-        <div>
+        <div class="divInputIngrediente">
             Ingrediente extra:
             <input type="text" class="ingrediente" /><br />
         </div>
     </div>
-    <button id="agregarExtra">Agregar ingrediente</button>
+    <button id="agregarExtra" class="waves-effect waves-light btn">Agregar ingrediente</button>
     <br />
-    <button id="enviar">Buscar</button>
+    <button id="enviar" class="btn waves-effect waves-light" type="submit">Buscar</button>
 
     <div id="container"></div>
 
 
     <script src="./main.js"></script>
-
 
 </body>
 
