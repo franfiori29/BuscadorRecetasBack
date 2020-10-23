@@ -27,3 +27,9 @@ button {
 #container > * {
   margin-top: 10px;
 }
+@media (max-width: 1200px) {
+  .card {
+    width: 80%;
+    margin: auto;
+  }  
+}
