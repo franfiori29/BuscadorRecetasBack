@@ -50,6 +50,7 @@ const creaTarj = (objetoReceta) => {
     lineaIngrediente.innerHTML = ing;
     ulIngredientes.appendChild(lineaIngrediente);
   });
+
   divIngredientesDescripcion.appendChild(tituloIngredientes)
   divIngredientesDescripcion.appendChild(ulIngredientes)
   divIngredientes.appendChild(divIngredientesDescripcion)

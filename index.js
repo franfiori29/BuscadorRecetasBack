@@ -14,6 +14,7 @@ async function scalpURLS(ingredientesInputs) {
     recetas[i] =
       "https://cocinerosargentinos.com/" + $(this).children().attr("href");
   });
+
   return recetas;
 }
 
